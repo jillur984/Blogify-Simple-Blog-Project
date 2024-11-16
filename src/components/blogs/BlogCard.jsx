@@ -1,10 +1,13 @@
 import { Link } from "react-router-dom";
 import BlogAction from "./BlogAction";
-import blogImage from '../../assets/blog.png'
+import blogImage from "../../assets/blog.png";
+
 
 const BlogCard = ({ blogs }) => {
-  console.log(blogs);
+  
   console.log("Is blogs an array:", Array.isArray(blogs));
+
+ 
 
   return (
     <div className="space-y-3 md:col-span-5">
@@ -20,7 +23,6 @@ const BlogCard = ({ blogs }) => {
             />
           </Link>
           <div className="mt-2 relative">
-          
             <Link to={`/single-blog/${blog.id}`}>
               <h3 className="text-slate-300 text-xl lg:text-2xl">
                 {blog.title}
@@ -36,11 +38,11 @@ const BlogCard = ({ blogs }) => {
               <div className="flex items-center capitalize space-x-2">
                 <div className="avatar-img bg-indigo-600 text-white">
                   <div>
-                   <Link to='/profile'>
-                   <span className="inline-flex items-center justify-center w-10 h-10 bg-blue-500 ">
-                      {blog.author.firstName[0]}
-                    </span>
-                   </Link>
+                    <Link to="/profile">
+                      <span className="inline-flex items-center justify-center w-10 h-10 bg-blue-500 ">
+                        {blog.author.firstName[0]}
+                      </span>
+                    </Link>
                   </div>
                 </div>
 
@@ -60,7 +62,7 @@ const BlogCard = ({ blogs }) => {
                 <span>{blog.likes.length} Likes</span>
               </div>
             </div>
-            <BlogAction />
+            <BlogAction blog={blog} />
           </div>
         </div>
       ))}

@@ -26,6 +26,22 @@ const BlogReducer=(state,action)=>{
               error:null
             }
         }
+        case actions.blogs.POST_DATA_EDITED:{
+          return{
+            ...state,
+            loading:false,
+            // blogs:action.data,
+            blogs: [...state.blogs, ...action.data],
+            error:null
+          }
+      }
+      case actions.blogs.POST_DATA_DELETED:{
+        return{
+          ...state,
+          loading:false,
+          blogs:state.blogs.filter((item)=>item.id!==action.data)
+        }
+    }
 
         
         case actions.blogs.DATA_FETCH_ERROR:{

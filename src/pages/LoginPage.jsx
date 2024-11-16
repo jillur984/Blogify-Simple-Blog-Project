@@ -14,7 +14,7 @@ const LoginPage = () => {
         
       </div>
     </section>
-    <Footer/>
+   
     </>
     
   )

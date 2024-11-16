@@ -4,6 +4,8 @@ export const actions={
         "DATA_FETCHED":"BLOG_DATA_FETCHED",
         "DATA_FETCH_ERROR":"BLOG_DATA_FETCH_ERROR",
         "SINGLE_BLOG_FETCHED": "SINGLE_BLOG_FETCHED",
+        "POST_DATA_EDITED":"BLOG_DATA_EDITED",
+        "POST_DATA_DELETED":"BLOG_DATA_DELETED"
 
     },
     profile:{

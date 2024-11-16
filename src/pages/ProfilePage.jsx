@@ -14,7 +14,6 @@ const ProfilePage = () => {
   const { api } = useAxios();
   const { state: profile, dispatch } = useProfile();
   const uploadImageRef = useRef();
-
   console.log(state)
 
   const handleImageUpload = (e) => {

@@ -2,6 +2,7 @@ import { useState } from "react";
 import CommentsList from "./CommentsList";
 import useAxios from "../hooks/useAxios";
 import { useAuth } from "../hooks/useAuth";
+import PostAction from "./PostAction";
 
 const PostComments = ({ singleId, id }) => {
   const [comments, setComments] = useState(singleId?.comments || []);
@@ -65,6 +66,7 @@ const PostComments = ({ singleId, id }) => {
           </div>
         </div>
         <CommentsList comments={comments} id={id} /> {/* Pass the updated comments to the list */}
+        <PostAction comments={comments} id={id}/>
       </div>
     </section>
   );

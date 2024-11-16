@@ -5,14 +5,21 @@ import { useAuth } from '../hooks/useAuth'
 const Bio = () => {
     const{auth}=useAuth()
     const[editMode,setEditMode]=useState(false)
+    const[bioDetails,setBioDetails]=useState("")
     const[bio,setBio]=useState(auth.user.bio)
+
+    const handleBioSubmit=()=>{
+      setEditMode(false)
+      setBioDetails(bio)
+    }
+
   return (
     <>
     <div className="mt-4 flex items-start gap-2 lg:mt-6">
             <div className="flex-1">
             {!editMode ? (
             <p className="leading-[188%] text-gray-400 lg:text-lg">
-            {auth.user?.bio}
+            {bioDetails}
           </p>
           ):(
             <textarea className='p-2 className="leading-[188%] text-gray-600 lg:text-lg rounded-md'
@@ -30,8 +37,8 @@ const Bio = () => {
               <img src={EditIcon} alt="Edit" />
             </button>
                 ):(
-                    <button className="flex-center h-7 w-7 rounded-full">
-              <img src={checkIcon} alt="Edit"  />
+                    <button className="flex-center h-7 w-7 rounded-full" onClick={handleBioSubmit}>
+              <img src={checkIcon} alt="check"  />
             </button>
                 )
             }
